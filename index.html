@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo de Tarefas</title>
+    <link rel="stylesheet" href="/Frontend/style.css">
+</head>
+<body>
+    <h1>Aplicativo de Tarefas</h1>
+
+    <div class="input-container">
+        <div class="input-group">
+            <label for="new-task">Tarefa</label>
+            <input type="text" id="new-task" placeholder="Digite a nova tarefa...">
+        </div>
+        <div class="input-group">
+            <label for="task-end-date">Data Final</label>
+            <input type="date" id="task-end-date">
+        </div>
+        <button id="add-task">Adicionar</button>
+    </div>
+    
+
+    <!-- Tabela para exibir as tarefas -->
+    <table id="task-table">
+        <thead>
+            <tr>
+                <th>Selecionar</th>
+                <th>Tarefa</th>
+                <th>Data Final</th>
+                <th>Data de Inserção</th>
+                <th>Hora</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As tarefas serão inseridas aqui -->
+        </tbody>
+    </table>
+
+    <!-- Seção para botões "Concluir" e "Excluir" -->
+    <div class="actions-container">
+        <button id="complete-selected" class="action-btn">Concluir Selecionado</button>
+        <button id="delete-selected" class="action-btn">Excluir Selecionado</button>
+    </div>
+
+    <script src="/Frontend/script.js"></script>
+</body>
+</html>

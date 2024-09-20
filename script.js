@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const completeSelectedButton = document.getElementById('complete-selected');
     const deleteSelectedButton = document.getElementById('delete-selected');
 
-    // Função para formatar a data no formato brasileiro (dd/mm/aaaa)
+    // Função para formatar a data no formato BR
     function formatDateBR(date) {
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Adiciona célula para a data final
         const endDateCell = newRow.insertCell(2);
-        endDateCell.textContent = endDate.split('-').reverse().join('/'); // Formata a data final no formato brasileiro
+        endDateCell.textContent = endDate.split('-').reverse().join('/'); // Formata a data final no formato BR
 
         // Adiciona célula para a data de inserção
         const insertionDateCell = newRow.insertCell(3);
@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         endDateInput.value = '';
     });
 
-    // Marcar tarefas selecionadas como concluídas
     completeSelectedButton.addEventListener('click', function() {
         const rows = document.querySelectorAll('#task-table tbody tr');
         rows.forEach(row => {

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicativo de Tarefas</title>
+    <title>To-Do</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Aplicativo de Tarefas</h1>
+    <h1>Aplicativo To-Do</h1>
 
     <div class="input-container">
         <div class="input-group">
@@ -20,9 +20,6 @@
         </div>
         <button id="add-task">Adicionar</button>
     </div>
-    
-
-    <!-- Tabela para exibir as tarefas -->
     <table id="task-table">
         <thead>
             <tr>
@@ -37,13 +34,32 @@
             <!-- As tarefas serão inseridas aqui -->
         </tbody>
     </table>
-
-    <!-- Seção para botões "Concluir" e "Excluir" -->
     <div class="actions-container">
-        <button id="complete-selected" class="action-btn">Concluir Selecionado</button>
-        <button id="delete-selected" class="action-btn">Excluir Selecionado</button>
+        <button id="complete-selected" class="action-btn">Concluir Tarefa</button>
+        <button id="delete-selected" class="action-btn">Excluir Tarefa</button>
     </div>
-
+    <footer>
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data">
+    
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario">
+    </footer>
     <script src="script.js"></script>
+    <script>
+        function atualizarDataEHora() {
+            const hoje = new Date();
+
+            const dataFormatada = hoje.toISOString().split('T')[0];
+            document.getElementById('data').value = dataFormatada;
+
+            const horas = String(hoje.getHours()).padStart(2, '0');
+            const minutos = String(hoje.getMinutes()).padStart(2, '0');
+            const horarioFormatado = `${horas}:${minutos}`;
+            document.getElementById('horario').value = horarioFormatado;
+        }
+            setInterval(atualizarDataEHora, 1000);
+    </script>
+
 </body>
 </html>
